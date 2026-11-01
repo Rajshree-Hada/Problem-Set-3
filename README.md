@@ -1,1 +1,7 @@
 # Problem-Set-3
+
+The correct average revenue per West customer is 812.17 dollars. The $1,242.54 figure answers revenue per order instead. Revenue is recorded once per customer, but joining to the orders table repeated each customer once for every order, turning 2,000 West customers into 13,440 rows. Customers with many orders also have the highest revenue, so they were counted many times over and the average rose by 53 percent.
+
+The programme works, but modestly. West earns more largely because it has bigger accounts. In my simulation the true effect is $25 per customer, yet the naive West comparison reports 197 dollars, nearly eight times too high. Adjusting for account size gives 27.61 dollars, with a 95 percent interval of 18.88 to 36.35 dollars. Adding support tickets as a control reverses the answer to negative 75.53 dollars, because tickets result from the programme and from revenue rather than causing either. With real data, account size could be argued to be the only confounder but not proven to be.
+
+I recommend that the team compare row counts after every join, aggregating the many-sided table first, as my check did successfully. Missing regions should be handled explicitly, since a plain filter silently dropped 483 customers, or 16 percent. Controls should be limited to facts established before assignment. Automated reviewers should supplement these checks, not replace them, because the AI-written one flagged correct and broken joins alike.
